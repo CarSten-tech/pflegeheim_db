@@ -215,6 +215,36 @@ export default function Dashboard() {
     } else alert('Keine Faxnummern in der Auswahl gefunden.');
   };
 
+  const handleExportCSV = () => {
+    const emailSource = selectedIds.size > 0 ? sortedFacilities.filter(f => selectedIds.has(f.edit_token)) : sortedFacilities;
+    const items = emailSource.filter(f => f.email && f.email.trim() !== '' && f.email !== '—');
+    
+    if (items.length === 0) {
+      alert('In der aktuellen Auswahl wurden keine Einrichtungen mit einer E-Mail-Adresse gefunden.');
+      return;
+    }
+
+    const currentOrigin = window.location.origin;
+    let csvContent = "Einrichtungsname;E-Mail;Verifizierungs_Link\n";
+    
+    items.forEach(f => {
+      // Clean data for CSV
+      const name = (f.name || '').replace(/"/g, '""').replace(/;/g, ',');
+      const email = f.email.trim();
+      const link = `${currentOrigin}/edit/${f.edit_token}`;
+      csvContent += `"${name}";${email};${link}\n`;
+    });
+
+    const blob = new Blob(["\ufeff" + csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("download", `pflegeheime_links_${new Date().toISOString().split('T')[0]}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const handleCopySingleFax = (fax: string, token: string) => {
     if (!fax || fax === '—') return;
     navigator.clipboard.writeText(`${fax.replace(/[^0-9]/g, '')}@fax`);
@@ -589,8 +619,11 @@ export default function Dashboard() {
               <Button onClick={() => setIsFilterOpen(!isFilterOpen)} variant="outline" className="hidden xl:flex w-full sm:w-auto gap-2 text-neutral-700 cursor-pointer">
                 <SlidersHorizontal className="h-4 w-4" />{isFilterOpen ? 'Filter ausblenden' : 'Filter einblenden'}
               </Button>
-              <Button onClick={handleCopyFax} variant="default" className="w-full sm:w-auto gap-2 bg-primary text-white cursor-pointer">
-                <Copy className="h-4 w-4" />{faxCopyCount} Faxnummern kopieren
+              <Button onClick={handleCopyFax} variant="default" className="w-full sm:w-auto gap-2 bg-primary hover:bg-primary/90 text-white cursor-pointer px-3">
+                <Copy className="h-4 w-4" />{faxCopyCount} Faxnummern
+              </Button>
+              <Button onClick={handleExportCSV} variant="default" className="w-full sm:w-auto gap-2 bg-emerald-600 hover:bg-emerald-700 text-white cursor-pointer px-3">
+                <Mail className="h-4 w-4" />Links exportieren (CSV)
               </Button>
               <div className="w-full sm:w-64 relative">
                 <Search className="absolute left-3 top-2.5 h-4 w-4 text-neutral-400" />
