@@ -23,6 +23,13 @@ export default function EditProfile({ params }: { params: Promise<{ token: strin
         if (facility.error) {
           toast.error(facility.error);
         } else {
+          // If data was AI checked but NOT verified, clear the fields so the user sees them as empty
+          if (facility.ai_checked) {
+            if (!facility.fax_verified_at) facility.fax = '';
+            if (!facility.email_verified_at) facility.email = '';
+            // We also clear phone if we cleared fax/email, as AI might have hallucinated it too
+            if (!facility.fax_verified_at && !facility.email_verified_at) facility.phone = '';
+          }
           setData(facility);
         }
         setLoading(false);
@@ -152,10 +159,10 @@ export default function EditProfile({ params }: { params: Promise<{ token: strin
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 flex gap-3 text-blue-800">
               <span className="text-xl">🤖</span>
               <div className="text-sm">
-                <p className="font-semibold">Automatisch recherchierte Daten</p>
+                <p className="font-semibold">Aktion erforderlich: Kontaktdaten ergänzen</p>
                 <p>
-                  Einige der untenstehenden Kontaktdaten (wie Fax oder E-Mail) wurden automatisiert für Sie recherchiert. 
-                  Bitte prüfen Sie diese sorgfältig und korrigieren Sie sie bei Bedarf. 
+                  Uns fehlen für Ihre Einrichtung noch bestätigte Kontaktdaten für Überleitungsanfragen (wie Ihre sichere Faxnummer). 
+                  Bitte tragen Sie diese in die untenstehenden Felder ein.
                   Mit dem Klick auf "Speichern" bestätigen Sie die Richtigkeit für unser Portal.
                 </p>
               </div>
