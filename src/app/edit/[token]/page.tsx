@@ -147,6 +147,20 @@ export default function EditProfile({ params }: { params: Promise<{ token: strin
           </div>
         </CardHeader>
         <CardContent className="space-y-6">
+
+          {data.ai_checked && (!data.fax_verified_at || !data.email_verified_at) && (
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 flex gap-3 text-blue-800">
+              <span className="text-xl">🤖</span>
+              <div className="text-sm">
+                <p className="font-semibold">Automatisch recherchierte Daten</p>
+                <p>
+                  Einige der untenstehenden Kontaktdaten (wie Fax oder E-Mail) wurden automatisiert für Sie recherchiert. 
+                  Bitte prüfen Sie diese sorgfältig und korrigieren Sie sie bei Bedarf. 
+                  Mit dem Klick auf "Speichern" bestätigen Sie die Richtigkeit für unser Portal.
+                </p>
+              </div>
+            </div>
+          )}
           
           <div className="space-y-4 bg-white p-4 border rounded-lg">
              <h3 className="font-semibold text-neutral-900 border-b pb-2">Kontaktdaten für Überleitungen</h3>

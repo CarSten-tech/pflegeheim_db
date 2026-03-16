@@ -17,6 +17,7 @@ export interface Facility {
   contact_person: string;
   fax_verified_at: string | null;
   email_verified_at: string | null;
+  ai_checked?: boolean;
   specialties?: {
     junge_pflege?: boolean;
     demenz?: boolean;
@@ -94,6 +95,7 @@ export async function PUT(request: Request) {
         ...(current.specialties || {}),
         ...(body.specialties || {})
       },
+      ai_checked: false,
       fax_verified_at: body.fax !== undefined ? new Date().toISOString() : current.fax_verified_at,
       email_verified_at: body.email !== undefined ? new Date().toISOString() : current.email_verified_at
     };
