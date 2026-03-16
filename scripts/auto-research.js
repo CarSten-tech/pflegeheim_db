@@ -53,19 +53,20 @@ async function googleSearch(query) {
 async function extractInfoWithGemini(heimName, snippets) {
     if (!snippets) return { fax: null, phone: null, email: null };
 
-    const prompt = `
+const prompt = `
 Du bist ein hochpräziser Datenanalyst für Pflegedaten. 
 Aufgabe: Extrahiere aus den Google-Suchergebnissen für das Pflegeheim "${heimName}" die FAXNUMMER und die EMAIL-ADRESSE.
 
-REGELN ZUR FAXNUMMER:
+STRANGSTE REGELN ZUR FAXNUMMER:
 1. Verwechsle Fax nicht mit Telefon! Eine Telefonnummer steht meistens hinter "Tel.", "Telefon" oder einem Telefonsymbol (📞).
-2. Eine Faxnummer steht meist hinter "Fax", "Telefax" oder einem Faxsymbol (📠, 🖨️). Faxnummern enden im Pflegebereich sehr oft auf -9 oder -xxx.
-3. Wenn du dir nicht 100% sicher bist, dass es ein Fax ist, gib "null" aus.
+2. Eine Faxnummer steht explizit hinter "Fax", "Telefax" oder einem Faxsymbol (📠, 🖨️).
+3. ABSOLUTES VERBOT ZU RATEN: Wenn in den Suchergebnissen nicht ausdrücklich das Wort "Fax" (oder ein eindeutiges Synonym davon) vor einer Nummer steht, gib ZWINGEND "null" aus.
+4. Hänge niemals fiktive Durchwahlen (wie -199 oder -300) an eine gefundene Telefonnummer an. Entweder die Nummer steht genauso im Text als Fax, oder du gibst "null" aus.
 
 WEITERE REGELN:
-4. Formatiere die Faxnummer und Telefonnummer sauber (z.B. 01234 56789).
-5. Achte bei der E-Mail Adresse darauf, dass es eine valide Heim-Adresse ist (oft info@... oder kontakt@...).
-6. ANTWORTE NUR MIT EINEM REINEN JSON OBJEKT! Keine Markdown Blocks, kein Text davor oder danach. Exakt dieses Format:
+5. Formatiere gefundene Nummern sauber (z.B. 01234 56789).
+6. Achte bei der E-Mail Adresse darauf, dass es eine valide Heim-Adresse ist (oft info@... oder kontakt@...).
+7. ANTWORTE NUR MIT EINEM REINEN JSON OBJEKT! Keine Markdown Blocks, kein Text davor oder danach. Exakt dieses Format:
 {
   "fax": "nummer oder null",
   "phone": "nummer oder null",
@@ -80,7 +81,7 @@ ${snippets}
         const response = await axios.post(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
             contents: [{ parts: [{ text: prompt }] }],
             generationConfig: {
-                temperature: 0.1,
+                temperature: 0.0,
                 topK: 1,
                 topP: 1,
                 responseMimeType: 'application/json'
