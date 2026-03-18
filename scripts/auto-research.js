@@ -7,8 +7,8 @@ const axios = require('axios');
 // ============================================================================
 // KONFIGURATION (VOM USER AUSZUFÜLLEN!)
 // ============================================================================
-const SERPER_API_KEY = process.env.SERPER_API_KEY || '';
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY || '';
+const SERPER_API_KEY = process.env.SERPER_API_KEY || '84a62940245c8b1ba57fd963373615590a80851d';
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY || 'AIzaSyAXn92fK4yBDhJgBHNlteVa9g83-3Uiaq8';
 
 // Welche Regionen wollen wir als nächstes parsen? (Lass leer für "Alle ungeprüften")
 // Filter Logic: Wenn das json flag `ai_checked` nicht existiert und auch keine manuellen Flags.
