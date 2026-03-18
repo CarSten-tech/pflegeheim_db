@@ -1401,7 +1401,7 @@
     "city": "Aldenhoven",
     "phone": "02464 90980",
     "fax": null,
-    "email": "alexandra.kotzott@compassio.de",
+    "email": "anp-el@compassio.de",
     "website": "https://www.compassio.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -1572,7 +1572,7 @@
     "city": "Alsdorf",
     "phone": "02404 5988-0",
     "fax": null,
-    "email": "alexandra.kotzott@compassio.de",
+    "email": "als-el@compassio.de",
     "website": "https://www.compassio.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -2007,7 +2007,7 @@
     "city": "Augustdorf",
     "phone": "05231/762-110",
     "fax": "05231/762-113",
-    "email": "info@diakonis.de",
+    "email": "hanna.gostomski@diakonis.de",
     "website": "https://www.diakonis.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -2015,7 +2015,8 @@
     "contact_person": "Frau Claudia Schelp",
     "fax_verified_at": null,
     "email_verified_at": null,
-    "ai_checked": true
+    "ai_checked": true,
+    "aiFixed": true
   },
   {
     "name": "Friederike-Fliedner-Haus",
@@ -2439,7 +2440,7 @@
     "city": "Bad Münstereifel",
     "phone": null,
     "fax": null,
-    "email": "alexandra.kotzott@compassio.de",
+    "email": "bme-el@compassio.de",
     "website": "https://www.compassio.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -7466,7 +7467,7 @@
     "city": "Detmold",
     "phone": "05231/762-110",
     "fax": "05231/762-113",
-    "email": "info@diakonis.de",
+    "email": "sarah.koepel@diakonis.de",
     "website": "https://www.diakonis.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -7474,7 +7475,8 @@
     "contact_person": "Frau Claudia Schelp",
     "fax_verified_at": null,
     "email_verified_at": null,
-    "ai_checked": true
+    "ai_checked": true,
+    "aiFixed": true
   },
   {
     "name": "Seniorenzentrum Elisabethstraße",
@@ -7483,7 +7485,7 @@
     "city": "Detmold",
     "phone": "05231/762-110",
     "fax": "05231/762-113",
-    "email": "info@diakonis.de",
+    "email": "kathrin.jung@diakonis.de",
     "website": "https://www.diakonis.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -7491,7 +7493,8 @@
     "contact_person": "Frau Claudia Schelp",
     "fax_verified_at": null,
     "email_verified_at": null,
-    "ai_checked": true
+    "ai_checked": true,
+    "aiFixed": true
   },
   {
     "name": "Seniorenzentrum Sofienstraße",
@@ -7500,7 +7503,7 @@
     "city": "Detmold",
     "phone": "05231/762-110",
     "fax": "05231/762-113",
-    "email": "info@diakonis.de",
+    "email": "michaela.schleicher@diakonis.de",
     "website": "https://www.diakonis.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -7508,7 +7511,8 @@
     "contact_person": "Frau Claudia Schelp",
     "fax_verified_at": null,
     "email_verified_at": null,
-    "ai_checked": true
+    "ai_checked": true,
+    "aiFixed": true
   },
   {
     "name": "Alfred-Delp-Haus",
@@ -9967,7 +9971,7 @@
     "city": "Duisburg",
     "phone": "0800 - 40 30 222",
     "fax": "0203 97599-599",
-    "email": "info@fliedner.de",
+    "email": "pflegeampark@fliedner.de",
     "website": "https://www.wallstrasse.fliedner.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -9975,7 +9979,8 @@
     "contact_person": "Theodor Fliedner Stiftung – Zentrales Belegungs- und Beratungsmanagement",
     "fax_verified_at": null,
     "email_verified_at": null,
-    "ruhrgebiet_west_checked": true
+    "ruhrgebiet_west_checked": true,
+    "aiFixed": true
   },
   {
     "name": "HEWAG Seniorenstift Duisburg-Neumühl",
@@ -10439,7 +10444,7 @@
     "city": "Düren",
     "phone": "02421 2079-0",
     "fax": null,
-    "email": "alexandra.kotzott@compassio.de",
+    "email": "due-el@compassio.de",
     "website": "https://www.compassio.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -10631,7 +10636,7 @@
     "city": "Elsdorf",
     "phone": "02464 9086603",
     "fax": null,
-    "email": "alexandra.kotzott@compassio.de",
+    "email": "ohd-el@compassio.de",
     "website": "https://www.compassio.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -14212,7 +14217,7 @@
     "city": "Gevelsberg",
     "phone": "0800 - 40 30 222",
     "fax": "02332 663-451",
-    "email": "info@fliedner.de",
+    "email": "info.hageboelling@fliedner.de",
     "website": "https://www.wallstrasse.fliedner.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -14220,7 +14225,8 @@
     "contact_person": "Theodor Fliedner Stiftung – Zentrales Belegungs- und Beratungsmanagement",
     "fax_verified_at": null,
     "email_verified_at": null,
-    "ruhrgebiet_ost_checked": true
+    "ruhrgebiet_ost_checked": true,
+    "aiFixed": true
   },
   {
     "name": "AWO Elisabeth-Brune-Seniorenzentrum",
@@ -15033,7 +15039,7 @@
     "city": "Haan",
     "phone": "0800 - 40 30 222",
     "fax": "0208 - 377 336-69",
-    "email": "info@fliedner.de",
+    "email": "info.friedensheim@fliedner.de",
     "website": "https://www.wallstrasse.fliedner.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -15041,7 +15047,8 @@
     "contact_person": "Theodor Fliedner Stiftung – Zentrales Belegungs- und Beratungsmanagement",
     "fax_verified_at": null,
     "email_verified_at": null,
-    "ai_checked": true
+    "ai_checked": true,
+    "aiFixed": true
   },
   {
     "name": "Seniorenzentrum Stella Vitalis",
@@ -15068,7 +15075,7 @@
     "city": "Haan",
     "phone": "0800 - 40 30 222",
     "fax": "0208 - 377 336-69",
-    "email": "info@fliedner.de",
+    "email": "info.friedensheim@fliedner.de",
     "website": "https://www.wallstrasse.fliedner.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -15076,7 +15083,8 @@
     "contact_person": "Theodor Fliedner Stiftung – Zentrales Belegungs- und Beratungsmanagement",
     "fax_verified_at": null,
     "email_verified_at": null,
-    "ai_checked": true
+    "ai_checked": true,
+    "aiFixed": true
   },
   {
     "name": "Senioren-Park carpe diem Haan",
@@ -19344,7 +19352,7 @@
     "city": "Jülich",
     "phone": "02461/9950",
     "fax": "02461/9950",
-    "email": "alexandra.kotzott@compassio.de",
+    "email": "jue-el@compassio.de",
     "website": "https://www.compassio.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -19400,7 +19408,7 @@
     "city": "Jülich",
     "phone": null,
     "fax": null,
-    "email": "alexandra.kotzott@compassio.de",
+    "email": "jus-el@compassio.de",
     "website": "https://www.compassio.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -22748,7 +22756,7 @@
     "city": "Lage",
     "phone": "05231/762-110",
     "fax": "05231/762-113",
-    "email": "info@diakonis.de",
+    "email": "andrea.rebert@diakonis.de",
     "website": "https://www.diakonis.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -22756,7 +22764,8 @@
     "contact_person": "Frau Claudia Schelp",
     "fax_verified_at": null,
     "email_verified_at": null,
-    "ai_checked": true
+    "ai_checked": true,
+    "aiFixed": true
   },
   {
     "name": "Haus der Diakonie",
@@ -22765,7 +22774,7 @@
     "city": "Lage",
     "phone": "05231/762-110",
     "fax": "05231/762-113",
-    "email": "info@diakonis.de",
+    "email": "carola.hilker@diakonis.de",
     "website": "https://www.diakonis.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -22773,7 +22782,8 @@
     "contact_person": "Frau Claudia Schelp",
     "fax_verified_at": null,
     "email_verified_at": null,
-    "ai_checked": true
+    "ai_checked": true,
+    "aiFixed": true
   },
   {
     "name": "Seniorenzentrum Allensteiner Weg",
@@ -22782,7 +22792,7 @@
     "city": "Lage",
     "phone": "05231/762-110",
     "fax": "05231/762-113",
-    "email": "info@diakonis.de",
+    "email": "vanessa.ruesing@diakonis.de",
     "website": "https://www.diakonis.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -22790,7 +22800,8 @@
     "contact_person": "Frau Claudia Schelp",
     "fax_verified_at": null,
     "email_verified_at": null,
-    "ai_checked": true
+    "ai_checked": true,
+    "aiFixed": true
   },
   {
     "name": "St. Antonius Langenberg Pflege + Wohnen",
@@ -23576,7 +23587,7 @@
     "city": "Linnich",
     "phone": null,
     "fax": null,
-    "email": "alexandra.kotzott@compassio.de",
+    "email": "lin-el@compassio.de",
     "website": "https://www.compassio.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -23630,7 +23641,7 @@
     "city": "Linnich",
     "phone": null,
     "fax": null,
-    "email": "alexandra.kotzott@compassio.de",
+    "email": "lia-el@compassio.de",
     "website": "https://www.compassio.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -26425,7 +26436,7 @@
     "city": "Mülheim an der Ruhr",
     "phone": "0800 - 40 30 222",
     "fax": "0208 48 43 - 404",
-    "email": "info@fliedner.de",
+    "email": "jennifer.jaks@fliedner.de",
     "website": "https://www.wallstrasse.fliedner.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -26433,7 +26444,8 @@
     "contact_person": "Jasmin Brieske / Jennifer Jaks",
     "fax_verified_at": null,
     "email_verified_at": null,
-    "ruhrgebiet_west_checked": true
+    "ruhrgebiet_west_checked": true,
+    "aiFixed": true
   },
   {
     "name": "Seniorenstift St. Engelbertus",
@@ -27861,7 +27873,7 @@
     "city": "Nörvenich",
     "phone": null,
     "fax": null,
-    "email": "alexandra.kotzott@compassio.de",
+    "email": "noe-el@compassio.de",
     "website": "https://www.compassio.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -27879,7 +27891,7 @@
     "city": "Nümbrecht",
     "phone": "02262 / 69 39 019",
     "fax": "02293/9138888 ",
-    "email": "info@fliedner.de",
+    "email": "info.engelsstift@fliedner.de",
     "website": "https://www.weiherpassage.fliedner.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -27887,7 +27899,8 @@
     "contact_person": "Theodor Fliedner Stiftung – Zentrales Belegungs- und Beratungsmanagement",
     "fax_verified_at": null,
     "email_verified_at": null,
-    "ai_checked": true
+    "ai_checked": true,
+    "aiFixed": true
   },
   {
     "name": "Ernst-Christoffel-Haus",
@@ -29479,7 +29492,7 @@
     "city": "Ratingen",
     "phone": "0800 - 40 30 222",
     "fax": "0208 - 377 336-69",
-    "email": "info@fliedner.de",
+    "email": "info.haus-bethesda@fliedner.de",
     "website": "https://www.wallstrasse.fliedner.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -29487,7 +29500,8 @@
     "contact_person": "Theodor Fliedner Stiftung – Zentrales Belegungs- und Beratungsmanagement",
     "fax_verified_at": null,
     "email_verified_at": null,
-    "ai_checked": true
+    "ai_checked": true,
+    "aiFixed": true
   },
   {
     "name": "Altenzentrum Haus Salem",
@@ -31287,7 +31301,7 @@
     "city": "Schlangen",
     "phone": "05231/762-110",
     "fax": "05231/762-113",
-    "email": "info@diakonis.de",
+    "email": "irina.wolf@diakonis.de",
     "website": "https://www.diakonis.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
@@ -31295,7 +31309,8 @@
     "contact_person": "Frau Claudia Schelp",
     "fax_verified_at": null,
     "email_verified_at": null,
-    "ai_checked": true
+    "ai_checked": true,
+    "aiFixed": true
   },
   {
     "name": "Stiftung Ev. Alten-und Pflegeheim Gemünd",
@@ -34271,7 +34286,7 @@
     "city": "Viersen",
     "phone": null,
     "fax": null,
-    "email": "alexandra.kotzott@compassio.de",
+    "email": "vir-el@compassio.de",
     "website": "https://www.compassio.de",
     "has_kurzzeitpflege": true,
     "has_vollstationaer": true,
