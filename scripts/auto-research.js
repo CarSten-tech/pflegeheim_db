@@ -50,23 +50,30 @@ async function googleSearch(query) {
     }
 }
 
-async function extractInfoWithGemini(heimName, snippets) {
+async function extractInfoWithGemini(heimName, heimCity, snippets) {
     if (!snippets) return { fax: null, phone: null, email: null };
 
 const prompt = `
 Du bist ein hochpräziser Datenanalyst für Pflegedaten. 
-Aufgabe: Extrahiere aus den Google-Suchergebnissen für das Pflegeheim "${heimName}" die FAXNUMMER und die EMAIL-ADRESSE.
+Aufgabe: Extrahiere aus den Google-Suchergebnissen für das Pflegeheim "${heimName}" in der Stadt "${heimCity}" die FAXNUMMER und die EMAIL-ADRESSE.
+
+STRANGSTE REGELN ZUR LOKALEN ZUORDNUNG (ANTI-TRÄGERGESELLSCHAFT):
+1. Die gesuchte Einrichtung befindet sich zwingend in "${heimCity}".
+2. Wenn eine gefundene E-Mail oder Faxnummer offensichtlich zur Hauptverwaltung oder Trägergesellschaft in einer anderen Stadt (Zentrale) gehört, ignoriere sie strikt! Wähle immer nur die lokale Nummer für ${heimCity}.
+3. Trage nur Daten ein, wenn du sie durch die Text-Schnipsel eindeutig dem Heim in ${heimCity} zuordnen kannst. Im geringsten Zweifel: Gib "null" aus.
 
 STRANGSTE REGELN ZUR FAXNUMMER:
-1. Verwechsle Fax nicht mit Telefon! Eine Telefonnummer steht meistens hinter "Tel.", "Telefon" oder einem Telefonsymbol (📞).
-2. Eine Faxnummer steht explizit hinter "Fax", "Telefax" oder einem Faxsymbol (📠, 🖨️).
-3. ABSOLUTES VERBOT ZU RATEN: Wenn in den Suchergebnissen nicht ausdrücklich das Wort "Fax" (oder ein eindeutiges Synonym davon) vor einer Nummer steht, gib ZWINGEND "null" aus.
-4. Hänge niemals fiktive Durchwahlen (wie -199 oder -300) an eine gefundene Telefonnummer an. Entweder die Nummer steht genauso im Text als Fax, oder du gibst "null" aus.
+4. Verwechsle Fax nicht mit Telefon! Eine Telefonnummer steht meistens hinter "Tel.", "Telefon" oder einem Telefonsymbol (📞).
+5. Eine Faxnummer steht explizit hinter "Fax", "Telefax" oder einem Faxsymbol (📠, 🖨️).
+6. ABSOLUTES VERBOT ZU RATEN: Wenn in den Suchergebnissen nicht ausdrücklich das Wort "Fax" (oder synonym) vor einer Nummer steht, gib ZWINGEND "null" aus.
+7. Hänge niemals fiktive Durchwahlen (wie -199 oder -300) an eine gefundene Telefonnummer an. Entweder die Nummer steht genauso im Text als Fax, oder du gibst "null" aus.
 
-WEITERE REGELN:
-5. Formatiere gefundene Nummern sauber (z.B. 01234 56789).
-6. Achte bei der E-Mail Adresse darauf, dass es eine valide Heim-Adresse ist (oft info@... oder kontakt@...).
-7. ANTWORTE NUR MIT EINEM REINEN JSON OBJEKT! Keine Markdown Blocks, kein Text davor oder danach. Exakt dieses Format:
+REGELN ZUR EMAIL-ADRESSE:
+8. Suche primär nach der allgemeinen E-Mail des Heims (z.B. info@..., kontakt@..., verwaltung@..., empfang@...).
+9. Vermeide E-Mail-Adressen von spezifischen Kontaktpersonen (wie der Pflegedienstleitung, z.B. m.schmidt@...), es sei denn, es ist absolut die einzige E-Mail, die für diese Einrichtung in ${heimCity} gefunden wurde. Eine allgemeine Adresse gewinnt immer!
+10. Achte darauf, dass es eine valide E-Mail-Adresse ist.
+
+ANTWORTE NUR MIT EINEM REINEN JSON OBJEKT! Keine Markdown Blocks, kein Text davor oder danach. Exakt dieses Format:
 {
   "fax": "nummer oder null",
   "phone": "nummer oder null",
@@ -141,7 +148,7 @@ async function run() {
             const query = `"${heim.name}" ${heim.city || ''} Pflegeheim Fax Email`;
             const snippets = await googleSearch(query);
             
-            const aiData = await extractInfoWithGemini(heim.name, snippets);
+            const aiData = await extractInfoWithGemini(heim.name, heim.city || 'NRW', snippets);
             
             // Gefundene Daten ins Heim eintragen
             let updated = false;
